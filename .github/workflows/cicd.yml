@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
 push:
 branches:
-- master
+- main
 
 jobs:
 deploy:
@@ -11,7 +11,7 @@ runs-on: ubuntu-latest
 
 ```
 steps:
-  - name: Checkout repository
+  - name: Checkout code
     uses: actions/checkout@v4
 
   - name: Copy files to EC2
@@ -23,7 +23,7 @@ steps:
       source: "."
       target: "/home/ubuntu/portfolio"
 
-  - name: Deploy with Docker Compose
+  - name: Run Docker Compose on EC2
     uses: appleboy/ssh-action@v1.0.3
     with:
       host: ${{ secrets.EC2_HOST }}
