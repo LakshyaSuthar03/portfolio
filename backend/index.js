@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Hello from the backend! deployed on ec2 successfully');
+    res.send('Hello from the backend! deployed on ec2 successfully with docker and github actions');
 });
 
 app.listen(PORT, () => {
