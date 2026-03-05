@@ -2,5 +2,5 @@ From node:alpine
 WORKDIR /backend
 COPY . .
 RUN npm install
-EXPOSE 5000
+EXPOSE 80
 CMD ["npm", "start"]
